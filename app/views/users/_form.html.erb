@@ -1,0 +1,42 @@
+<%= form_with(model: user, local: true) do |form| %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label t('table.name'), for:"formGroupExampleInput", class:"form-label fw-bold" %>
+      <%= form.text_field :nome, class:"form-control", id:"formGroupExampleInput" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label t('table.cpf'), for:"formGroupExampleInput", class:"form-label fw-bold"%>
+      <%= form.text_field :cpf, class:"form-control", id:"formGroupExampleInput" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label t('table.age'), for:"formGroupExampleInput", class:"form-label fw-bold"  %>
+      <%= form.text_field :idade, class:"form-control", id:"formGroupExampleInput" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label t('table.profession'), for:"formGroupExampleInput", class:"form-label fw-bold" %>
+      <%= form.text_field :profissao, class:"form-control", id:"formGroupExampleInput", placeholder:'Digite sua Profissão' %>
+    </div>
+    
+    <div class="mb-3">
+      <%= form.label User.human_attribute_name(:job_type), for:"formGroupExampleInput", class:"form-label fw-bold"  %>
+      <%= form.select("job_type_id", @job_type_options, {include_blank: t('user.select')}, class:"form-control", id:"formGroupExampleInput")%>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit%>
+    </div>
+  <% end %>

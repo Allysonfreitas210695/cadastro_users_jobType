@@ -1,0 +1,25 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: 'Usuário'
+        other: 'Usuários'
+      job_type:
+        one: 'Categoria'
+        other: 'Categorias'
+    attributes:
+      user:
+        id: 'Código'
+        nome: 'Nome'
+        cpf: 'Cpf'
+        idade: 'Idade'
+        job_type_id: 'Tipo de Categoria de emprego'
+        job_type: 'Tipo de Categoria de emprego'
+        updated_at: 'Atualizado em'
+        created_at: 'Criado em'
+      job_type:
+        id: 'categoria'
+        category: 'Tipo de emprego'
+        updated_at: 'Atualizado em'
+        created_at: 'Criado em'
+        

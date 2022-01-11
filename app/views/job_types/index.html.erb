@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-sm d-block mx-5">
+  <h1 class="mb-3">
+    <%= JobType.model_name.human(count: User.count)%>
+  </h1>
+
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th><%= JobType.human_attribute_name(:category)%></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @job_types.each do |job_type| %>
+        <tr>
+          <td class="table-warning"><%= job_type.category %></td>
+          <td class="table-warning"><%= link_to t('links.show'), job_type %></td>
+          <td class="table-warning"><%= link_to t('links.edit'), edit_job_type_path(job_type) %></td>
+          <td class="table-warning"><%= link_to t('links.destroy'), job_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to t('job_type.new'), new_job_type_path, class: 'btn btn-dark'%>
+</div>

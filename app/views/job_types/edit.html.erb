@@ -1,0 +1,9 @@
+<h1 class="text-dark fw-normal fs-2 py-1 px-5">
+  <%= t('job_type.edit_h1') %>
+</h1>
+
+<div class="container d-block mx-5 ">
+  <%= render 'form', job_type: @job_type %>
+  <%= link_to t('links.edit'), @job_type, class: 'btn btn-dark'%>
+  <%= link_to t('links.back'), job_types_path, class: 'btn btn-dark'%>
+</div>

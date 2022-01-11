@@ -1,0 +1,25 @@
+'pt-BR':
+  actual_locale: 'Português'
+  hello: 'Bem-vindo ao cadastros de usuário e suas profissões'
+  links:
+    show: 'Mostrar'
+    back: 'Voltar'
+    edit: 'Editar'
+    new: 'Novo Usuário'
+    destroy: 'Apagar Usuário'
+    home: 'Página Inicial'
+  table: 
+    name: 'Nome'
+    cpf: 'CPF'
+    age: 'Idade'
+    profession: 'Profissão'
+    category: 'Categoria'
+  user:
+    register: 'Cadastro de Usuário'
+    edit_h1: 'Editar Usuário'
+    select: 'Selecione...'
+  job_type:
+    new: 'Cadastro de tipo categoria emprego'
+    edit_h1: 'Editar o tipo de Emprego'
+    select: 'Selecione...'
+    register: 'Cadastro de tipo de Categoria de Emprego'

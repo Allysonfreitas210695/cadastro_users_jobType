@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container d-block mx-5">
+    <label for="formGroupExampleInput" class="form-label"><strong><%= JobType.human_attribute_name(:category).upcase %>:</strong></label>
+    <input type="text" class="form-control mb-3" id="formGroupExampleInput" value="<%= @job_type.category %>" disabled>
+
+    <%= link_to t('links.edit'), edit_job_type_path(@job_type), class: 'px-3 btn btn-dark'%>
+    <%= link_to t('links.back'), job_types_path, class: 'btn btn-dark'%>
+</div>
+
+

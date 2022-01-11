@@ -1,0 +1,7 @@
+<h1 class="text-dark fw-normal fs-2 py-1 px-5"><%= t('user.edit_h1')%></h1>
+
+<div class="container d-block mx-5 ">
+  <%= render 'form', user: @user %>
+  <%= link_to t('links.show'), @user, class:'btn btn-dark' , role:'button'%>
+  <%= link_to t('links.back'), users_path, class:'btn btn-dark' , role:'button' %>
+</div>

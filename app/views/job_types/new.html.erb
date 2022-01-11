@@ -1,0 +1,6 @@
+<h1 class="px-5 mb-3 fw-normal"><%= t('job_type.new')%></h1>
+
+<div class="container d-block mx-5">
+  <%= render 'form', job_type: @job_type %>
+  <%= link_to t('links.new'), job_types_path %>
+</div>

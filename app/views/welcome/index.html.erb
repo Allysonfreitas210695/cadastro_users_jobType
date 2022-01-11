@@ -1,0 +1,15 @@
+<div class="container-sm card border border-dark" style="width: 100%; height:45vh;">
+  <div class="card-body">
+    <h1 class="card-title mb-4"><%= I18n.t('hello') %></h5>
+    <p class="card-text mb-5 fs-5">
+      Essa Aplicação testará o funcionamento de cadastro, leitura e se desejar deletar também,
+      essa aplicação surgiu de uma idéia de como é o trabalho das pessoas, onde tem o objetivo de saber qual é a categoria do emprego delas, por exemplo se é formal ou informal.
+    </p>
+    <%= link_to t('user.register'),users_path, class: 'btn btn-dark'%>
+    <%= link_to t('job_type.register'), job_types_path, class: 'btn btn-dark'%>
+  </div>
+ 
+</div>
+
+
+

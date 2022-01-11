@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container d-block mx-5 ">
+
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label"><strong><%= t('table.name').upcase %>:</strong></label>
+    <input type="text" class="form-control" id="formGroupExampleInput" value="<%= @user.nome %>" disabled>
+  </div>
+
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label"><strong><%= t('table.cpf').upcase %>:</strong></label>
+    <input type="text" class="form-control" id="formGroupExampleInput" value="<%= @user.cpf %>" disabled>
+  </div>
+
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label"><strong><%= t('table.age').upcase %>:</strong></label>
+    <input type="text" class="form-control" id="formGroupExampleInput" value="<%= @user.idade %>" disabled>
+  </div>
+
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label"><strong><%= t('table.profession').upcase %>:</strong></label>
+    <input type="text" class="form-control" id="formGroupExampleInput" value="<%= @user.profissao %>" disabled>
+  </div>
+  
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label"><strong><%= t('table.category').upcase %>:</strong></label>
+    <input type="text" class="form-control" id="formGroupExampleInput" value="<%= @user.job_type_category %>" disabled>
+  </div>
+
+  <%= link_to t('links.edit'), edit_user_path(@user), class:'btn btn-dark', role:'button' %>
+  <%= link_to t('links.back'), users_path, class:'btn btn-dark', role:'button' %>
+</div>

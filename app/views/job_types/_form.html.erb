@@ -1,0 +1,22 @@
+<%= form_with(model: job_type, local: true) do |form| %>
+  <% if job_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job_type.errors.count, "error") %> prohibited this job_type from being saved:</h2>
+
+      <ul>
+      <% job_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :category, for:"formGroupExampleInput", class:"form-label fw-bold" %>
+    <%= form.text_field :category, class:"form-control", id:"formGroupExampleInput" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit %>
+  </div>
+<% end %>

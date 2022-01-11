@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App Profission</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if params[:controller] == 'welcome'%>
+      <%= yield %>
+    <% else %>
+      <div class="nav py-2 bg-dark justify-content-end fs-5">
+        <li class="nav-item">
+          <%= link_to 'Home', welcome_index_path, class:'text-white nav-link active'%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Portugues', root_path(locale: 'pt-BR'), class:'text-white nav-link active'%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Inglês', root_path(locale: 'en'), class:'text-white nav-link active'%>
+        </li>
+      </div>
+      <%= yield %>
+    <% end %>
+  </body>
+</html>
