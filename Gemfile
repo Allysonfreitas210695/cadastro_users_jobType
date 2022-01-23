@@ -16,13 +16,16 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
-# usando para estilizar terminal
-gem 'tty-spinner', '~> 0.9.3'
-
 # internacionalizado o projeto
 gem 'i18n', '~> 1.8', '>= 1.8.11'
-
+# usando para estilizar terminal
+gem 'tty-spinner', '~> 0.9.3'
+# criação de dados fake
+gem 'faker', '~> 2.19'
+# estilizar o terminal
 gem 'awesome_print', '~> 1.8'
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -32,8 +35,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

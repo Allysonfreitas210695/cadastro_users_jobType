@@ -1,12 +1,15 @@
 namespace :dev do
+  PASSWORD = 123456.to_s
+
   desc 'TODO'
   task setup: :environment do
     if Rails.env.development?
-      spinner_style('Apgando o BD.....') { 'rails db:drop' }
-      spinner_style('Criando o BD.....') { 'rails db:create' }
-      spinner_style('Migrando o BD.....') { 'rails db:migrate' }
-      `rails dev:add_type_category`
-      `rails dev:add_users`
+      spinner_style('Apgando o BD.....') { %x(rails db:drop) }
+      spinner_style('Criando o BD.....') { %x(rails db:create) }
+      spinner_style('Migrando o BD.....') { %x(rails db:migrate) }
+      spinner_style('Adicionando categorys.....') { %x(rails dev:add_type_category) }
+      spinner_style('Adicionando Users fake.....') { %x(rails dev:add_users) }
+      spinner_style('Adicionando Admins extras.....') { %x(rails dev:add_admins) }
     else
       puts 'Você nao está em desenvolmento!!!'
     end
@@ -14,8 +17,7 @@ namespace :dev do
 
   desc 'Castrado dos tipos de moedas'
   task add_users: :environment do
-    spinner_style('Cadastrando usuarios.....') do
-      usurs = [
+    usurs = [
         {
           nome: 'Allyson Bruno de Freitas Fernandes',
           cpf: '333.222.777-88',
@@ -37,15 +39,13 @@ namespace :dev do
           profissao: 'Programador FullStack',
           job_type: JobType.second
         }
-      ]
-      usurs.each { |user| User.find_or_create_by!(user) }
-    end
+    ]
+    usurs.each { |user| User.find_or_create_by(user) }
   end
 
   desc 'Castrado dos tipos de moedas'
   task add_type_category: :environment do
-    spinner_style('Cadastrando categorias.....') do
-      categorys = [
+    categorys = [
         {
           category: 'CLT'
         },
@@ -53,7 +53,13 @@ namespace :dev do
           category: 'Informal'
         }
       ]
-      categorys.each { |category| JobType.find_or_create_by!(category) }
+    categorys.each { |category| JobType.find_or_create_by(category) }
+  end
+
+  desc 'Cadastro de Admin extras'
+  task add_admins: :environment do
+    1..10.times do
+      Admin.create!(name: Faker::Name.name, email: Faker::Internet.email, password: PASSWORD, password_confirmation: PASSWORD)
     end
   end
 
