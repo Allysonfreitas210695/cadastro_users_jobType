@@ -1,4 +1,4 @@
-pt-BR:
+'pt-BR':
   activerecord:
     models:
       user:
@@ -7,6 +7,9 @@ pt-BR:
       job_type:
         one: 'Categoria'
         other: 'Categorias'
+      admin:
+        one: 'Admin'
+        other: 'Admins'
     attributes:
       user:
         id: 'Código'
@@ -22,4 +25,18 @@ pt-BR:
         category: 'Tipo de emprego'
         updated_at: 'Atualizado em'
         created_at: 'Criado em'
-        
+      admin:
+        id: 'categoria'
+        name: 'Nome'
+        password: 'Senha'
+        password_confirmation: 'Confirme sua Senha'
+        updated_at: 'Atualizado em'
+        created_at: 'Criado em'
+      errors:
+        messages:
+          blank: não pode ser em branco
+          invalid: inválido
+          taken: já cadastrado
+          confirmation: não é igual. Insira a mesma senha
+          too_long: 'Muito grande. Máximo %{count} caracteres'
+          too_short: 'Muito curto. Máximo %{count} caracteres'

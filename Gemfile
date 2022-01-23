@@ -17,7 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
 # internacionalizado o projeto
-gem 'i18n', '~> 1.8', '>= 1.8.11'
+gem 'rails-i18n', '~> 5.1'
 # usando para estilizar terminal
 gem 'tty-spinner', '~> 0.9.3'
 # criação de dados fake
