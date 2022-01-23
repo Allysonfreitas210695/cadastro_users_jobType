@@ -1,6 +1,5 @@
 class Admin < ApplicationRecord
   has_secure_password
-  before_commit :set_user_id
   has_many :users
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i

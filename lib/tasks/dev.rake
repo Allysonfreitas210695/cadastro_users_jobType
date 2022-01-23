@@ -7,9 +7,9 @@ namespace :dev do
       spinner_style('Apgando o BD.....') { %x(rails db:drop) }
       spinner_style('Criando o BD.....') { %x(rails db:create) }
       spinner_style('Migrando o BD.....') { %x(rails db:migrate) }
+      spinner_style('Adicionando Admins extras.....') { %x(rails dev:add_admins) }
       spinner_style('Adicionando categorys.....') { %x(rails dev:add_type_category) }
       spinner_style('Adicionando Users fake.....') { %x(rails dev:add_users) }
-      spinner_style('Adicionando Admins extras.....') { %x(rails dev:add_admins) }
     else
       puts 'Você nao está em desenvolmento!!!'
     end
@@ -23,21 +23,24 @@ namespace :dev do
           cpf: '333.222.777-88',
           idade: 23,
           profissao: 'Programador web',
-          job_type: JobType.all.sample
+          job_type: JobType.all.sample,
+          admin: Admin.all.sample
         },
         {
           nome: 'Francisco costa',
           cpf: '111.666.333-11',
           idade: 21,
           profissao: 'Mecanico',
-          job_type: JobType.first
+          job_type: JobType.first,
+          admin: Admin.all.sample
         },
         {
           nome: 'Noberto carneiro',
           cpf: '333.222.555-86',
           idade: 23,
           profissao: 'Programador FullStack',
-          job_type: JobType.second
+          job_type: JobType.second,
+          admin: Admin.all.sample
         }
     ]
     usurs.each { |user| User.find_or_create_by(user) }
@@ -58,7 +61,7 @@ namespace :dev do
 
   desc 'Cadastro de Admin extras'
   task add_admins: :environment do
-    1..10.times do
+    1..2.times do
       Admin.create!(name: Faker::Name.name, email: Faker::Internet.email, password: PASSWORD, password_confirmation: PASSWORD)
     end
   end
