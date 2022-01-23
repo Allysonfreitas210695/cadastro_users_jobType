@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_025104) do
+ActiveRecord::Schema.define(version: 2022_01_23_211230) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name", default: "", null: false
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2022_01_23_025104) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "job_type_id"
+    t.integer "admin_id", default: 1
+    t.index ["admin_id"], name: "index_users_on_admin_id"
     t.index ["job_type_id"], name: "index_users_on_job_type_id"
   end
 

@@ -24,7 +24,7 @@
           <td class="table-warning"><%= user.cpf %></td>
           <td class="table-warning"><%= user.idade %></td>
           <td class="table-warning"><%= user.profissao %></td>
-          <td class="table-warning"><%= user.job_type_category %></td>
+          <td class="table-warning"><%= user.job_type.category %></td>
           <td class="table-warning"><%= link_to t('links.show'), user %></td>
           <td class="table-warning"><%= link_to t('links.edit'), edit_user_path(user) %></td>
           <td class="table-warning"><%= link_to t('links.destroy'), user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

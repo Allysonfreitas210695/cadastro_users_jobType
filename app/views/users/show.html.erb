@@ -21,10 +21,10 @@
     <label for="formGroupExampleInput" class="form-label"><strong><%= t('table.profession').upcase %>:</strong></label>
     <input type="text" class="form-control" id="formGroupExampleInput" value="<%= @user.profissao %>" disabled>
   </div>
-  
+
   <div class="mb-3">
     <label for="formGroupExampleInput" class="form-label"><strong><%= t('table.category').upcase %>:</strong></label>
-    <input type="text" class="form-control" id="formGroupExampleInput" value="<%= @user.job_type_category %>" disabled>
+    <input type="text" class="form-control" id="formGroupExampleInput" value="<%= @user.job_type.category %>" disabled>
   </div>
 
   <%= link_to t('links.edit'), edit_user_path(@user), class:'btn btn-dark', role:'button' %>
