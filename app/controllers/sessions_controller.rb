@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def entrar
-    # code
+    redirect_to root_path if admin_signed_in?
   end
 
   def create

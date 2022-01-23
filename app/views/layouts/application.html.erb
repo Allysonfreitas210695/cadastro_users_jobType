@@ -12,21 +12,25 @@
   </head>
 
   <body>
-    <% if params[:controller] == 'welcome'%>
+
+
+    <nav id="navbar-example2" class="navbar navbar-light bg-dark px-3">
+    <a class="navbar-brand text-light" href="/">Home</a>
+    <ul class="nav nav-pills">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><%= current_admin.name %></a>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to 'Perfil', admin_path, class:"dropdown-item"%>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item">Sair</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+
       <%= yield %>
-    <% else %>
-      <div class="nav py-2 bg-dark justify-content-end fs-5">
-        <li class="nav-item">
-          <%= link_to 'Home', root_path, class:'text-white nav-link active'%>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Portugues', root_path(locale: 'pt-BR'), class:'text-white nav-link active'%>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Inglês', root_path(locale: 'en'), class:'text-white nav-link active'%>
-        </li>
-      </div>
-      <%= yield %>
-    <% end %>
   </body>
 </html>

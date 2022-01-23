@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # Parte do admin
   get 'admin/new', to: 'admin#new'
   post 'admin/create', to: 'admin#create'
+  get 'admin', to: 'admin#index'
 
   # sesão
   get 'session/entrar', to: 'sessions#entrar'
