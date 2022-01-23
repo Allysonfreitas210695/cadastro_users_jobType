@@ -1,0 +1,19 @@
+<div class="container my-2 px-4 py-2">
+    <header class="d-flex justify-content-center py-3">
+     <h3> Tela de <%= message %> </h3>
+    </header>
+
+    <%= form_with(object: :session, url: session_entrar_path, method: :post, local: true) do |form| %>
+        <div class="mb-3">
+        <%= form.label :email, class:"form-label", id:"exampleFormControl"%>
+            <%= form.text_field :email, class:"form-control", for:"exampleFormControlInput1", placeholder:'ex: teste@teste.com' %>
+        </div>
+
+        <div class="mb-3">
+        <%= form.label :password, class:"form-label", id:"exampleFormControl"%>
+        <%= form.text_field :password, class:"form-control", for:"exampleFormControlInput1", placeholder:'Digite sua Senha' %>
+        </div>
+
+        <%= form.submit "Login", class:"btn btn-success"%>
+    <% end %>
+</div>
