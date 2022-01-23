@@ -3,7 +3,7 @@ module SessionsHelper
     session[:admin_id] = admin.id
   end
 
-  def segn_out
+  def sign_out
     session.delete(:admin_id)
   end
 

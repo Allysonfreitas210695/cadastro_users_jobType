@@ -13,4 +13,9 @@ class SessionsController < ApplicationController
        render :entrar
      end
   end
+
+  def destroy
+    sign_out
+    redirect_to session_entrar_path, notice: 'Logoult feito com sucesso'
+  end
 end

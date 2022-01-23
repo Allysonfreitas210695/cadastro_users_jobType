@@ -17,14 +17,20 @@
     <nav id="navbar-example2" class="navbar navbar-light bg-dark px-3">
     <a class="navbar-brand text-light" href="/">Home</a>
     <ul class="nav nav-pills">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><%= current_admin.name %></a>
-        <ul class="dropdown-menu">
-          <li>
-            <%= link_to 'Perfil', admin_path, class:"dropdown-item"%>
-          </li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item">Sair</a></li>
+      <% if admin_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><%= current_admin.name %></a>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to 'Perfil', admin_path, class:"dropdown-item"%>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <%= link_to 'Sair', session_sair_path, method: :delete, class:"dropdown-item"%>
+            </li>
+      <% else %>
+        <%= link_to "Entrar", session_entrar_path, class:"dropdown-item text-light" %>
+      <% end %>
         </ul>
       </li>
     </ul>
