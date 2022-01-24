@@ -12,7 +12,7 @@ class AdminController < ApplicationController
   def create
     @admin = Admin.new(params_admin)
     if @admin.save
-      redirect_to users_path, notice: 'Admin was successfully created'
+      redirect_to session_entrar_path, notice: 'Admin criado com sucesso!'
     else
       render :new
     end
