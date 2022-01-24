@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
        sign_in(admin)
        redirect_to root_path, notice: 'Admin logado com sucesso!'
      else
-       render :entrar
+       redirect_to session_entrar_path, notice: 'Senha ou email errado!'
      end
   end
 

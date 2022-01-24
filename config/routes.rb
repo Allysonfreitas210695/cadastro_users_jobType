@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-
+  
   # Parte do admin
   get 'admin/new', to: 'admin#new'
   post 'admin/create', to: 'admin#create'
-  get 'admin', to: 'admin#index'
+  get 'admin/index', to: 'admin#index'
   get 'admin/list', to: 'admin#lista_users'
+  get 'admin/:id', to: 'admin#edit', as: 'edit'
+  patch 'admin/:id', to: 'admin#update'
+
   # secao para entrar e excluir a secao
   get 'session/entrar', to: 'sessions#entrar'
   post 'session/entrar', to: 'sessions#create'
