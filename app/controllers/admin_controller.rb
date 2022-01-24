@@ -18,6 +18,10 @@ class AdminController < ApplicationController
     end
   end
 
+  def lista_users
+    @lista_users = User.where(admin: current_admin)
+  end
+
   private
   def params_admin
       params.require(:admin).permit(:email, :name, :password, :password_confirmation)
