@@ -1,18 +1,17 @@
 class AdminController < ApplicationController
   before_action :set_admin, only: [:edit, :update, :destroy]
-  before_action :set_admin, only: [:edit, :update]
+  # before_action :set_admin, only: [:edit, :update]
 
   def index
     @admins = Admin.all
   end
 
   def new
-  @admin = Admin.new
+    @admin = Admin.new
+    @admin.build_contact_admin
   end
 
-  def edit
-
-  end
+  def edit; end
 
   def update
     if @admin.update(params_admin)
@@ -38,7 +37,7 @@ class AdminController < ApplicationController
   private
 
   def params_admin
-      params.require(:admin).permit(:email, :name, :password, :password_confirmation)
+      params.require(:admin).permit(:email, :name, :password, :password_confirmation, contact_admin_attributes: [:id, :address, :phone])
   end
 
   def set_admin

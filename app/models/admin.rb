@@ -1,6 +1,7 @@
 class Admin < ApplicationRecord
   has_secure_password
   has_many :users
+  has_one :contact_admin
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
@@ -9,4 +10,6 @@ class Admin < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255},
                                     format: { with: VALID_EMAIL_REGEX },
                                     uniqueness: { case_sensitive: true }
+
+  accepts_nested_attributes_for :contact_admin, reject_if: :all_blank, allow_destroy: true
 end

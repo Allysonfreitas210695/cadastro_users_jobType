@@ -36,6 +36,18 @@
           <%= form.text_field :password_confirmation, class:"form-control", for:"exampleFormControlInput1", placeholder:'Confirme sua senha' %>
         </div>
 
+        <%= form.fields_for :contact_admin do |contact_form| %>
+          <div class="mb-3">
+            <%= contact_form.label :address, class:"form-label", id:"exampleFormControl" %>
+            <%= contact_form.text_field :address, class:"form-control", for:"exampleFormControlInput1", placeholder:'Digite sua Senha' %>
+          </div>
+
+          <div class="mb-3">
+            <%= contact_form.label :phone, class:"form-label", id:"exampleFormControl" %>
+            <%= contact_form.text_field :phone, class:"form-control", for:"exampleFormControlInput1", placeholder:'Digite sua Senha' %>
+          </div>
+        <% end %>
+
         <%= form.submit "Salva", class:"btn btn-success my-2"%>
     <% end %>
 </div>

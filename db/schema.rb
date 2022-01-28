@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_211230) do
+ActiveRecord::Schema.define(version: 2022_01_27_104207) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name", default: "", null: false
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2022_01_23_211230) do
     t.string "password_digest", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contact_admins", force: :cascade do |t|
+    t.string "address"
+    t.string "phone"
+    t.integer "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_contact_admins_on_admin_id"
   end
 
   create_table "job_types", force: :cascade do |t|
